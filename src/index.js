@@ -28,11 +28,15 @@ function TimelineItem({data}) {
 function Timeline({items}) {
   return (
     <div className="timeline-container">
-        <Circle />
+        <div className="timeline-grid">
+          <div>{items[0].start}</div>
+          <Circle />
+          <div></div>
+        </div>
 
         {items.map((item, key) => (
           <Fragment key={key}>
-            <div className="timeline-fragment">
+            <div className="timeline-grid">
               {key % 2 === 0 ? 
                 <>
                   <TimelineItem data={item} />
@@ -47,11 +51,28 @@ function Timeline({items}) {
                 </>
                 }
             </div>
-            {key < (items.length - 1) && <Circle />}
+            {key < (items.length - 1) && (
+              key % 2 === 0 ?
+              <div className="timeline-grid">
+                <div></div>
+                <Circle />
+                <div>{item.end}</div>
+              </div>
+              :
+              <div className="timeline-grid">
+                <div>{item.end}</div>
+                <Circle />
+                <div></div>
+              </div>
+            )}
           </Fragment>
         ))}
 
-        <Circle />
+        <div className="timeline-grid">
+          <div>{items[items.length - 1].end}</div>
+          <Circle />
+          <div></div>
+        </div>
     </div>
   )
 }

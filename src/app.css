@@ -47,7 +47,7 @@ body {
   margin: 0 1rem;
 }
 
-.timeline-fragment {
+.timeline-grid {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   gap: 1rem;
