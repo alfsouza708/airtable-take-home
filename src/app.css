@@ -1,5 +1,56 @@
 body {
-  margin: 0;
+  margin: 1rem;
   padding: 0;
   font-family: sans-serif;
+}
+
+.timeline-circle {
+  border-radius: calc(infinity * 1px);
+  width: 1rem;
+  height: 1rem;
+  background-color: cadetblue;
+  margin: 0 auto;
+}
+
+.timeline-pillar {
+  border-top-left-radius: calc(infinity * 1px);
+  border-top-right-radius: calc(infinity * 1px);
+  border-bottom-right-radius: calc(infinity * 1px);
+  border-bottom-left-radius: calc(infinity * 1px);
+  width: 0.25rem;
+  height: 100%;
+  background-color: cadetblue;
+  margin: 0 auto;
+}
+
+.timeline-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid cadetblue;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.timeline-item {
+  color: coral;
+  font: bold;
+  font-size: large;
+  width: 100%;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 1rem;
+}
+
+.timeline-fragment {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin: auto;
 }
