@@ -11,26 +11,18 @@ Design and implement a component for visualizing items on a timeline.
 
 ## README assignments
 
-```
-What you like about your implementation.
-```
+- **What you like about your implementation.**
 
 It's a basic implementation of a timeline interface with responsive design, without the use of a UI lib.
 
-```
-What you would change if you were going to do it again.
-```
+- **What you would change if you were going to do it again.**
 
 I started implementing the page template. The logic behind the sorting
 
-```
-How you made your design decisions. For example, if you looked at other timelines for inspiration, please note that.
-```
+- **How you made your design decisions. For example, if you looked at other timelines for inspiration, please note that.**
 
 I had the [MaterialUI alternating timeline](https://mui.com/material-ui/react-timeline/) as an inspiration for the design.
 
-```
-How you would test this if you had more time.
-```
+- **How you would test this if you had more time.**
 
 I would start by getting the specifics about the final product, such as what is the core of implementation, what tools would I use. Then I would implement the basic funcionalities, before styling them (I styled first here). Lastly I would refactor all of it's content on smaller components, writing unit tests for each one.
