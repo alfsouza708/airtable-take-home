@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import ReactDOM from "react-dom/client";
 import timelineItems from "./timelineItems.js";
+import { assignLanes } from "./assignLanes.js";
+import moment from "moment";
 import './app.css'
 
 function Circle() {
@@ -28,14 +30,22 @@ function TimelineItem({data}) {
 function Timeline({items}) {
   return (
     <div className="timeline-container">
-        <div className="timeline-grid">
-          <div>{items[0].start}</div>
-          <Circle />
-          <div></div>
-        </div>
-
         {items.map((item, key) => (
           <Fragment key={key}>
+            {key < (items.length) && (
+              key % 2 === 0 ?
+              <div className="timeline-grid">
+                <div></div>
+                <Circle />
+                <div>{moment(item.start).format('MMMM D, YYYY')}</div>
+              </div>
+              :
+              <div className="timeline-grid">
+                <div>{moment(item.start).format('MMMM D, YYYY')}</div>
+                <Circle />
+                <div></div>
+              </div>
+            )}
             <div className="timeline-grid">
               {key % 2 === 0 ? 
                 <>
@@ -51,36 +61,23 @@ function Timeline({items}) {
                 </>
                 }
             </div>
-            {key < (items.length - 1) && (
-              key % 2 === 0 ?
-              <div className="timeline-grid">
-                <div></div>
-                <Circle />
-                <div>{item.end}</div>
-              </div>
-              :
-              <div className="timeline-grid">
-                <div>{item.end}</div>
-                <Circle />
-                <div></div>
-              </div>
-            )}
           </Fragment>
         ))}
 
         <div className="timeline-grid">
-          <div>{items[items.length - 1].end}</div>
-          <Circle />
           <div></div>
+          <Circle />
+          <div>{moment(items[items.length - 1].end).format('MMMM D, YYYY')}</div>
         </div>
     </div>
   )
 }
 
 function App() {
+  let newLines = assignLanes(timelineItems)
   return (
     <div >
-      <Timeline items={timelineItems} />
+      <Timeline items={newLines} />
     </div>
   );
 }
