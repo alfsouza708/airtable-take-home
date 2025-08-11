@@ -17,7 +17,7 @@ It's a basic implementation of a timeline interface with responsive design, with
 
 - **What you would change if you were going to do it again.**
 
-I started implementing the page template. The logic behind the sorting
+I would refactor all of it's content on smaller components.
 
 - **How you made your design decisions. For example, if you looked at other timelines for inspiration, please note that.**
 
@@ -25,4 +25,4 @@ I had the [MaterialUI alternating timeline](https://mui.com/material-ui/react-ti
 
 - **How you would test this if you had more time.**
 
-I would start by getting the specifics about the final product, such as what is the core of implementation, what tools would I use. Then I would implement the basic funcionalities, before styling them (I styled first here). Lastly I would refactor all of it's content on smaller components, writing unit tests for each one.
+I would start by getting the specifics about the final product, such as what is the core of implementation, what tools would I use. Then I would implement the basic funcionalities, before styling them (I styled first here).
